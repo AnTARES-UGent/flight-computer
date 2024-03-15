@@ -4,14 +4,14 @@
 
 
 void core1_main();
-// main functie van core 0
+// main function of core 0
 int main()
 {
     multicore_launch_core1(core1_main); //start core 1
 }
 
 
-// main functie van core 1
+// main function of core 1
 void core1_main()
 {
 
