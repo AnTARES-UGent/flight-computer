@@ -7,13 +7,17 @@
 class BNO055 {
     public:
         BNO055();
+        
         void init();
-        void read();
         int test();
-        /*
-            Incorrect return types, these functions should each return 3 floats XYZ
-        */
-        float getGyro();
-        float getAccel();
-        float getMag();      
+
+        float getGyroX();
+        float getGyroY();
+        float getGyroZ();
+        float getAccelX();
+        float getAccelY();
+        float getAccelZ();
+        float getMagX();
+        float getMagY();
+        float getMagZ();
 };
