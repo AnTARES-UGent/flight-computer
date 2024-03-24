@@ -6,4 +6,4 @@
 
 # folders
 ## /io 
-Contains skeleton for sensor classes based on [deze sheet](https://ugentbe-my.sharepoint.com/:x:/g/personal/gilles_mahieu_ugent_be/EalpXaV0AiFGo6OlU56cWkABX50Z047u7A4d5Um7CYrSJA?e=ptFGD5)
+Contains skeleton for sensor classes based on [This sheet](https://ugentbe-my.sharepoint.com/:x:/g/personal/gilles_mahieu_ugent_be/EalpXaV0AiFGo6OlU56cWkABX50Z047u7A4d5Um7CYrSJA?e=ptFGD5)
