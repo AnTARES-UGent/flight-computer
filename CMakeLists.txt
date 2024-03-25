@@ -50,7 +50,7 @@ add_executable(antares_flight_computer
 )
 
 
-include_directories(${IO_FOLDER} ${LIBS_FOLDER})
+include_directories(${IO_FOLDER} ${LIBS_FOLDER} ${MAIN_FOLDER})
 
 target_link_libraries(antares_flight_computer pico_stdlib pico_multicore)
 

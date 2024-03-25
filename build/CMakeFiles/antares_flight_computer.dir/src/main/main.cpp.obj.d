@@ -70,4 +70,6 @@ CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj: \
  C:/pi_sdk/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
  C:/pi_sdk/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
  C:/pi_sdk/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
- C:/pi_sdk/pico-sdk/src/common/pico_sync/include/pico/critical_section.h
+ C:/pi_sdk/pico-sdk/src/common/pico_sync/include/pico/critical_section.h \
+ C:/anteres/flight-computer/src/io/bmp280.h \
+ C:/anteres/flight-computer/src/main/flightDataProcessing.h

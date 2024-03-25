@@ -1109,6 +1109,30 @@ C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/antares_flight_computer.dir/build.make CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 .PHONY : C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 
+src/main/flightDataProcessing.obj: src/main/flightDataProcessing.cpp.obj
+.PHONY : src/main/flightDataProcessing.obj
+
+# target to build an object file
+src/main/flightDataProcessing.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antares_flight_computer.dir/build.make CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+.PHONY : src/main/flightDataProcessing.cpp.obj
+
+src/main/flightDataProcessing.i: src/main/flightDataProcessing.cpp.i
+.PHONY : src/main/flightDataProcessing.i
+
+# target to preprocess a source file
+src/main/flightDataProcessing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antares_flight_computer.dir/build.make CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.i
+.PHONY : src/main/flightDataProcessing.cpp.i
+
+src/main/flightDataProcessing.s: src/main/flightDataProcessing.cpp.s
+.PHONY : src/main/flightDataProcessing.s
+
+# target to generate assembly for a file
+src/main/flightDataProcessing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antares_flight_computer.dir/build.make CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.s
+.PHONY : src/main/flightDataProcessing.cpp.s
+
 src/main/main.obj: src/main/main.cpp.obj
 .PHONY : src/main/main.obj
 
@@ -1262,6 +1286,9 @@ help:
 	@echo "... C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj"
 	@echo "... C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i"
 	@echo "... C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s"
+	@echo "... src/main/flightDataProcessing.obj"
+	@echo "... src/main/flightDataProcessing.i"
+	@echo "... src/main/flightDataProcessing.s"
 	@echo "... src/main/main.obj"
 	@echo "... src/main/main.i"
 	@echo "... src/main/main.s"

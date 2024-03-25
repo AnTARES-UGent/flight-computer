@@ -83,9 +83,29 @@ Discarded input sections
                 0x00000000       0xd2 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crt0.o
  .ARM.attributes
                 0x00000000       0x1b C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crt0.o
+ .text          0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+ .data          0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+ .bss           0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+ .text.unlikely._ZN20FlightDataProcessing20FlightDataProcessing14timeOfApoapsisEv
+                0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+ .text._ZN20FlightDataProcessing20FlightDataProcessing9isFallingEv
+                0x00000000       0x10 CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+ .text.unlikely._ZN20FlightDataProcessing20FlightDataProcessing17timeUntilApoapsisEv
+                0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+ .text._ZN20FlightDataProcessing20FlightDataProcessing15updateBarometerEfff
+                0x00000000       0x10 CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+ .text._ZN20FlightDataProcessing20FlightDataProcessing18isAltimeterFallingEv
+                0x00000000       0x10 CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+ .comment       0x00000000       0x45 CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
+ .ARM.attributes
+                0x00000000       0x2c CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
  .text          0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
  .data          0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
  .bss           0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
+ .text._Z15preFlightChecksv
+                0x00000000        0x4 CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
+ .text._Z10updateDatav
+                0x00000000       0x34 CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
  .text          0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .data          0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
  .bss           0x00000000        0x0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -1158,9 +1178,9 @@ Discarded input sections
                 0x00000000        0x8 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .bss.lockout_victim_initialized
                 0x00000000        0x2 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
- .text          0x00000000        0x0 C:\Users\brian\AppData\Local\Temp\ccc1oE4a.o
- .data          0x00000000        0x0 C:\Users\brian\AppData\Local\Temp\ccc1oE4a.o
- .bss           0x00000000        0x0 C:\Users\brian\AppData\Local\Temp\ccc1oE4a.o
+ .text          0x00000000        0x0 C:\Users\brian\AppData\Local\Temp\cc5cIqMl.o
+ .data          0x00000000        0x0 C:\Users\brian\AppData\Local\Temp\cc5cIqMl.o
+ .bss           0x00000000        0x0 C:\Users\brian\AppData\Local\Temp\cc5cIqMl.o
  .data          0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc.a(libc_a-calloc.o)
@@ -1479,11 +1499,11 @@ LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\brian\AppData\Local\Temp\ccc1oE4a.o
+ .boot2         0x10000000      0x100 C:\Users\brian\AppData\Local\Temp\cc5cIqMl.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x1cf0
+.text           0x10000100     0x1d10
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1553,188 +1573,191 @@ LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib
  .text.startup.main
                 0x1000030c       0x10 CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
                 0x1000030c                main
+ .text.startup._GLOBAL__sub_I_barometer
+                0x1000031c       0x1c CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
  .text.running_on_fpga
-                0x1000031c       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x1000031c                running_on_fpga
+                0x10000338       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x10000338                running_on_fpga
  .text.hw_claim_or_assert
-                0x1000032c       0x44 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x1000032c                hw_claim_or_assert
+                0x10000348       0x44 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000348                hw_claim_or_assert
  .text.spin_locks_reset
-                0x10000370       0x1c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000370                spin_locks_reset
+                0x1000038c       0x1c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x1000038c                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x1000038c       0x18 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x1000038c                next_striped_spin_lock_num
+                0x100003a8       0x18 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x100003a8                next_striped_spin_lock_num
  .text.irq_set_enabled
-                0x100003a4       0x24 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100003a4                irq_set_enabled
+                0x100003c0       0x24 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100003c0                irq_set_enabled
  .text.irq_is_enabled
-                0x100003c8       0x18 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100003c8                irq_is_enabled
+                0x100003e4       0x18 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100003e4                irq_is_enabled
  .text.irq_get_vtable_handler
-                0x100003e0       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100003e0                irq_get_vtable_handler
+                0x100003fc       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100003fc                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x100003f0       0x54 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100003f0                irq_set_exclusive_handler
+                0x1000040c       0x54 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x1000040c                irq_set_exclusive_handler
  .text.irq_remove_handler
-                0x10000444      0x1c4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000444                irq_remove_handler
+                0x10000460      0x1c4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000460                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x10000608       0xb4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000608                irq_add_tail_to_free_list
+                0x10000624       0xb4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000624                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x100006bc       0x24 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100006bc                irq_init_priorities
+                0x100006d8       0x24 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100006d8                irq_init_priorities
  .text.lock_init
-                0x100006e0       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x100006e0                lock_init
+                0x100006fc       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x100006fc                lock_init
  .text.mutex_init
-                0x100006f0       0x1c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x100006f0                mutex_init
- .text.recursive_mutex_init
                 0x1000070c       0x1c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x1000070c                recursive_mutex_init
+                0x1000070c                mutex_init
+ .text.recursive_mutex_init
+                0x10000728       0x1c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10000728                recursive_mutex_init
  .text.timer_pool_entry_comparator
-                0x10000728       0x34 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
-                0x10000728                timer_pool_entry_comparator
+                0x10000744       0x34 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000744                timer_pool_entry_comparator
  .text.sleep_until_callback
-                0x1000075c       0x30 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000778       0x30 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
  .text.add_alarm_under_lock.isra.0
-                0x1000078c      0x100 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x100007a8      0x100 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x1000088c      0x1c0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x100008a8      0x1c0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x10000a4c       0x6c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
-                0x10000a4c                alarm_pool_init_default
+                0x10000a68       0x6c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000a68                alarm_pool_init_default
  .text.alarm_pool_add_alarm_at
-                0x10000ab8      0x17c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
-                0x10000ab8                alarm_pool_add_alarm_at
+                0x10000ad4      0x17c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000ad4                alarm_pool_add_alarm_at
  .text.best_effort_wfe_or_timeout
-                0x10000c34       0xcc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
-                0x10000c34                best_effort_wfe_or_timeout
+                0x10000c50       0xcc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000c50                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x10000d00       0xbc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10000d1c       0xbc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x10000dbc       0x18 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10000dbc                hardware_alarm_claim
+                0x10000dd8       0x18 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10000dd8                hardware_alarm_claim
  .text.time_us_64
-                0x10000dd4       0x14 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10000dd4                time_us_64
+                0x10000df0       0x14 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10000df0                time_us_64
  .text.hardware_alarm_set_callback
-                0x10000de8       0x8c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10000de8                hardware_alarm_set_callback
+                0x10000e04       0x8c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10000e04                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x10000e74       0xd0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10000e74                hardware_alarm_set_target
+                0x10000e90       0xd0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10000e90                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x10000f44       0x3c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10000f44                hardware_alarm_cancel
+                0x10000f60       0x3c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10000f60                hardware_alarm_cancel
  .text.ph_merge_nodes
-                0x10000f80       0x58 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10000f9c       0x58 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_post_alloc_init
-                0x10000fd8       0x3c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10000fd8                ph_post_alloc_init
+                0x10000ff4       0x3c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10000ff4                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x10001014       0x8c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001014                ph_merge_two_pass
+                0x10001030       0x8c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001030                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x100010a0      0x100 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x100010bc      0x100 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x100011a0      0x104 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x100011a0                ph_remove_head
+                0x100011bc      0x104 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x100011bc                ph_remove_head
  .text.ph_remove_and_free_node
-                0x100012a4       0x78 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x100012a4                ph_remove_and_free_node
+                0x100012c0       0x78 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x100012c0                ph_remove_and_free_node
  .text.clocks_init
-                0x1000131c      0x2c8 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x1000131c                clocks_init
+                0x10001338      0x2c8 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10001338                clocks_init
  .text.pll_init
-                0x100015e4       0xa4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x100015e4                pll_init
+                0x10001600       0xa4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x10001600                pll_init
  .text.watchdog_start_tick
-                0x10001688       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10001688                watchdog_start_tick
+                0x100016a4       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x100016a4                watchdog_start_tick
  .text.xosc_init
-                0x10001698       0x28 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x10001698                xosc_init
+                0x100016b4       0x28 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x100016b4                xosc_init
  .text.runtime_init
-                0x100016c0       0xf0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100016c0                runtime_init
- .text._exit    0x100017b0        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100017b0                _exit
- .text.exit     0x100017b4        0x8 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100017b4                exit
- .text.panic    0x100017bc       0x30 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100017bc                panic
+                0x100016dc       0xf0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100016dc                runtime_init
+ .text._exit    0x100017cc        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100017cc                _exit
+ .text.exit     0x100017d0        0x8 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100017d0                exit
+ .text.panic    0x100017d8       0x30 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100017d8                panic
  .text.hard_assertion_failure
-                0x100017ec        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100017ec                hard_assertion_failure
+                0x10001808        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001808                hard_assertion_failure
  .text._out_char
-                0x100017f8       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10001814       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.weak_raw_vprintf
-                0x10001808       0x30 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x10001808                weak_raw_vprintf
- .text          0x10001838       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x10001824       0x30 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10001824                weak_raw_vprintf
+ .text          0x10001854       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x10001848       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10001848                rom_func_lookup
+                0x10001864       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10001864                rom_func_lookup
  .text.rom_data_lookup
-                0x10001858       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10001858                rom_data_lookup
+                0x10001874       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10001874                rom_data_lookup
  .text.rom_funcs_lookup
-                0x10001868       0x44 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10001868                rom_funcs_lookup
+                0x10001884       0x44 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10001884                rom_funcs_lookup
  .text.__wrap___aeabi_uidiv
-                0x100018ac       0x4c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x100018ac                __wrap___aeabi_uidiv
-                0x100018ac                __wrap___aeabi_uidivmod
-                0x100018ac                div_u32u32
-                0x100018ac                divmod_u32u32
-                0x100018b4                divmod_u32u32_unsafe
-                0x100018dc                divmod_u32u32_savestate
+                0x100018c8       0x4c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x100018c8                __wrap___aeabi_uidiv
+                0x100018c8                __wrap___aeabi_uidivmod
+                0x100018c8                div_u32u32
+                0x100018c8                divmod_u32u32
+                0x100018d0                divmod_u32u32_unsafe
+                0x100018f8                divmod_u32u32_savestate
  .text.__aeabi_double_init
-                0x100018f8       0x98 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x100018f8                __aeabi_double_init
+                0x10001914       0x98 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x10001914                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x10001990       0x2c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10001990                double_table_shim_on_use_helper
+                0x100019ac       0x2c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100019ac                double_table_shim_on_use_helper
  .text.__aeabi_float_init
-                0x100019bc       0x64 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x100019bc                __aeabi_float_init
+                0x100019d8       0x64 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x100019d8                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x10001a20       0x2c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x10001a20                float_table_shim_on_use_helper
- .text          0x10001a4c       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10001a4c                __aeabi_mem_init
- .text.memcpy   0x10001a5c        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10001a5c                __wrap_memcpy
-                0x10001a5c                __wrap___aeabi_memcpy
+                0x10001a3c       0x2c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x10001a3c                float_table_shim_on_use_helper
+ .text          0x10001a68       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10001a68                __aeabi_mem_init
+ .text.memcpy   0x10001a78        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10001a78                __wrap_memcpy
+                0x10001a78                __wrap___aeabi_memcpy
  .text.stdio_out_chars_crlf
-                0x10001a68       0x94 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10001a84       0x94 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_putchar
-                0x10001afc       0x98 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10001afc                __wrap_putchar
+                0x10001b18       0x98 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10001b18                __wrap_putchar
  .text.__wrap_puts
-                0x10001b94       0xe0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10001b94                __wrap_puts
+                0x10001bb0       0xe0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10001bb0                __wrap_puts
  .text.core1_trampoline
-                0x10001c74        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x10001c90        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .text.core1_wrapper
-                0x10001c78        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
-                0x10001c78                core1_wrapper
+                0x10001c94        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x10001c94                core1_wrapper
  .text.multicore_launch_core1_raw
-                0x10001c84       0x84 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
-                0x10001c84                multicore_launch_core1_raw
+                0x10001ca0       0x84 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x10001ca0                multicore_launch_core1_raw
  .text.multicore_launch_core1
-                0x10001d08       0x58 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
-                0x10001d08                multicore_launch_core1
- .text.strlen   0x10001d60       0x5c C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc.a(libc_a-strlen-stub.o)
-                0x10001d60                strlen
+                0x10001d24       0x58 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x10001d24                multicore_launch_core1
+ .text.strlen   0x10001d7c       0x5c C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libc.a(libc_a-strlen-stub.o)
+                0x10001d7c                strlen
  *(.fini)
- .fini          0x10001dbc        0x4 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
-                0x10001dbc                _fini
- .fini.__stub   0x10001dc0       0x30 linker stubs
+ .fini          0x10001dd8        0x4 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
+                0x10001dd8                _fini
+ *fill*         0x10001ddc        0x4 
+ .fini.__stub   0x10001de0       0x30 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -1746,80 +1769,80 @@ LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x10001df0        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10001df0                        . = ALIGN (0x4)
+ .eh_frame      0x10001e10        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x10001e10                        . = ALIGN (0x4)
 
-.glue_7         0x10001df0        0x0
- .glue_7        0x10001df0        0x0 linker stubs
+.glue_7         0x10001e10        0x0
+ .glue_7        0x10001e10        0x0 linker stubs
 
-.glue_7t        0x10001df0        0x0
- .glue_7t       0x10001df0        0x0 linker stubs
+.glue_7t        0x10001e10        0x0
+ .glue_7t       0x10001e10        0x0 linker stubs
 
-.vfp11_veneer   0x10001df0        0x0
- .vfp11_veneer  0x10001df0        0x0 linker stubs
+.vfp11_veneer   0x10001e10        0x0
+ .vfp11_veneer  0x10001e10        0x0 linker stubs
 
-.v4_bx          0x10001df0        0x0
- .v4_bx         0x10001df0        0x0 linker stubs
+.v4_bx          0x10001e10        0x0
+ .v4_bx         0x10001e10        0x0 linker stubs
 
-.iplt           0x10001df0        0x0
- .iplt          0x10001df0        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x10001e10        0x0
+ .iplt          0x10001e10        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x10001df0       0xb8
+.rodata         0x10001e10       0xb8
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.hardware_alarm_claim.str1.4
-                0x10001df0       0x90 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001e10       0x90 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
                                  0x22 (size before relaxing)
  .rodata.panic.str1.4
-                0x10001e80       0x12 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001ea0       0x12 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.hard_assertion_failure.str1.4
-                0x10001e80        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001ea0        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.str1.4
-                0x10001e80       0x4c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001ea0       0x4c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x10001e80        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001ea0        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x10001e8c        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001eac        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_44
-                0x10001e98        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001eb8        0xc CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.crlf_str.0
-                0x10001ea4        0x2 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10001ecc                        . = ALIGN (0x4)
- *fill*         0x10001ea6        0x2 
+                0x10001ec4        0x2 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10001eec                        . = ALIGN (0x4)
+ *fill*         0x10001ec6        0x2 
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x10001ea8                        . = ALIGN (0x4)
+                0x10001ec8                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x10001ea8                        __exidx_start = .
+                0x10001ec8                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x10001ea8                        __exidx_end = .
-                0x10001ea8                        . = ALIGN (0x4)
-                0x10001ea8                        __binary_info_start = .
+                0x10001ec8                        __exidx_end = .
+                0x10001ec8                        . = ALIGN (0x4)
+                0x10001ec8                        __binary_info_start = .
 
-.binary_info    0x10001ea8       0x1c
+.binary_info    0x10001ec8       0x1c
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr81
-                0x10001ea8        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001ec8        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x10001eac        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001ecc        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x10001eb0        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001ed0        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x10001eb4        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001ed4        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x10001eb8        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001ed8        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x10001ebc        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001edc        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr22
-                0x10001ec0        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10001ee0        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
-                0x10001ec4                        __binary_info_end = .
+                0x10001ee4                        __binary_info_end = .
 
-.rel.dyn        0x10001ec4        0x0
- .rel.iplt      0x10001ec4        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10001ec4                        . = ALIGN (0x4)
+.rel.dyn        0x10001ee4        0x0
+ .rel.iplt      0x10001ee4        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x10001ee4                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -1828,7 +1851,7 @@ LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib
                 0x20000000       0xc0 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0x194 load address 0x10001ec4
+.data           0x200000c0      0x198 load address 0x10001ee4
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -1894,47 +1917,48 @@ LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
  .init_array    0x20000250        0x4 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x20000254                        PROVIDE (__init_array_end = .)
-                0x20000254                        . = ALIGN (0x4)
+ .init_array    0x20000254        0x4 CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
+                0x20000258                        PROVIDE (__init_array_end = .)
+                0x20000258                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
                 [!provide]                        PROVIDE (__fini_array_end = .)
  *(.jcr)
-                0x20000254                        . = ALIGN (0x4)
-                0x20000254                        __data_end__ = .
-                0x10001ec4                        __etext = LOADADDR (.data)
+                0x20000258                        . = ALIGN (0x4)
+                0x20000258                        __data_end__ = .
+                0x10001ee4                        __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x20000254        0x0 load address 0x10002058
+                0x20000258        0x0 load address 0x1000207c
  .tm_clone_table
-                0x20000254        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x20000258        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
-                0x20000254        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
+                0x20000258        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x20000254        0x0 load address 0x10002058
- .igot.plt      0x20000254        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.igot.plt       0x20000258        0x0 load address 0x1000207c
+ .igot.plt      0x20000258        0x0 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x20000254        0x0 load address 0x10002058
-                0x20000254                        . = ALIGN (0x4)
+                0x20000258        0x0 load address 0x1000207c
+                0x20000258                        . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x20040000        0x0 load address 0x10002058
+.scratch_x      0x20040000        0x0 load address 0x1000207c
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x10002058                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x1000207c                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x10002058
+.scratch_y      0x20041000        0x0 load address 0x1000207c
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x10002058                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x1000207c                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
-.bss            0x20000258      0x3c8
+.bss            0x20000258      0x3dc
                 0x20000258                        . = ALIGN (0x4)
                 0x20000258                        __bss_start__ = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
@@ -1948,39 +1972,46 @@ LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib
                 0x20000480                sf_table
  .bss.alarm_callbacks
                 0x20000580       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .bss.barometer
+                0x20000590        0x1 CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
+                0x20000590                barometer
+ *fill*         0x20000591        0x3 
+ .bss.dataProcessing
+                0x20000594       0x10 CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
+                0x20000594                dataProcessing
  .bss.default_alarm_pool_entry_ids_high
-                0x20000590       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x200005a4       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
  .bss.default_alarm_pool_heap_nodes
-                0x200005a0       0x30 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
- .bss.drivers   0x200005d0        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .bss.filter    0x200005d4        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x200005b4       0x30 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+ .bss.drivers   0x200005e4        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .bss.filter    0x200005e8        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .bss.lazy_vsnprintf
-                0x200005d8        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .bss.object.0  0x200005dc       0x18 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
- .bss.pools     0x200005f4       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x200005ec        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .bss.object.0  0x200005f0       0x18 C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+ .bss.pools     0x20000608       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
  .bss.sf_clz_func
-                0x20000604        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x20000604                sf_clz_func
+                0x20000618        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x20000618                sf_clz_func
  .bss.sleep_notifier
-                0x20000608        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
+                0x2000061c        0x4 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/common/pico_time/time.c.obj
  .bss.target_hi
-                0x2000060c       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .bss.claimed   0x2000061c        0x1 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20000620       0x10 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .bss.claimed   0x20000630        0x1 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.irq_hander_chain_free_slot_head
-                0x2000061d        0x1 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x20000631        0x1 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .bss.timer_callbacks_pending
-                0x2000061e        0x1 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20000632        0x1 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  *(COMMON)
-                0x20000620                        . = ALIGN (0x4)
- *fill*         0x2000061f        0x1 
-                0x20000620                        __bss_end__ = .
+                0x20000634                        . = ALIGN (0x4)
+ *fill*         0x20000633        0x1 
+                0x20000634                        __bss_end__ = .
 
-.heap           0x20000620      0x800
-                0x20000620                        __end__ = .
-                0x20000620                        end = __end__
+.heap           0x20000634      0x800
+                0x20000634                        __end__ = .
+                0x20000634                        end = __end__
  *(.heap*)
- .heap          0x20000620      0x800 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-                0x20000e20                        __HeapLimit = .
+ .heap          0x20000634      0x800 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x20000e34                        __HeapLimit = .
 
 .stack1_dummy   0x20040000      0x800
  *(.stack1*)
@@ -1990,8 +2021,8 @@ LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x10002058        0x0
-                0x10002058                        PROVIDE (__flash_binary_end = .)
+.flash_end      0x1000207c        0x0
+                0x1000207c                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2000,6 +2031,7 @@ LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib
                 0x20042000                        PROVIDE (__stack = __StackTop)
                 0x00000001                        ASSERT ((__StackLimit >= __HeapLimit), region RAM overflowed)
                 0x00000001                        ASSERT (((__binary_info_header_end - __logical_binary_start) <= 0x100), Binary info must be in first 256 bytes of the binary)
+LOAD CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj
 LOAD CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj
 LOAD CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 LOAD CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
@@ -2047,7 +2079,7 @@ LOAD CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pi
 LOAD CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 LOAD CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
 LOAD CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
-LOAD C:\Users\brian\AppData\Local\Temp\ccc1oE4a.o
+LOAD C:\Users\brian\AppData\Local\Temp\cc5cIqMl.o
 LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libstdc++.a
 LOAD C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -2135,7 +2167,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000544       0x2c CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .ARM.attributes
-                0x00000570       0x22 C:\Users\brian\AppData\Local\Temp\ccc1oE4a.o
+                0x00000570       0x22 C:\Users\brian\AppData\Local\Temp\cc5cIqMl.o
  .ARM.attributes
                 0x00000592       0x1e C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/13.2 Rel1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .ARM.attributes

@@ -80,6 +80,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj.d"
   "CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
   "CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
+  "CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj"
+  "CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj.d"
   "CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj"
   "CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj.d"
   "antares_flight_computer.elf"

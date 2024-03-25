@@ -67,6 +67,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "C:/anteres/flight-computer/./src/io"
   "C:/anteres/flight-computer/./src/libs"
+  "C:/anteres/flight-computer/./src/main"
   "C:/pi_sdk/pico-sdk/src/common/pico_stdlib/include"
   "C:/pi_sdk/pico-sdk/src/rp2_common/hardware_gpio/include"
   "C:/pi_sdk/pico-sdk/src/common/pico_base/include"
@@ -145,6 +146,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/pi_sdk/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c" "CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj" "gcc" "CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj.d"
   "C:/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c" "CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" "gcc" "CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
   "C:/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp" "CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj" "gcc" "CMakeFiles/antares_flight_computer.dir/C_/pi_sdk/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj.d"
+  "C:/anteres/flight-computer/src/main/flightDataProcessing.cpp" "CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj" "gcc" "CMakeFiles/antares_flight_computer.dir/src/main/flightDataProcessing.cpp.obj.d"
   "C:/anteres/flight-computer/src/main/main.cpp" "CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj" "gcc" "CMakeFiles/antares_flight_computer.dir/src/main/main.cpp.obj.d"
   )
 
