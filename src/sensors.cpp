@@ -18,13 +18,19 @@ void Sensors::initGPS()
 
     }
 
-    while(myGNSS.getFixType()<2){
-         Serial.println("acquiring GPS signal....");
+    while(!myGNSS.getGnssFixOk()){
+         Serial.println("acquiring GPS signal.... fix type=" + myGNSS.getFixType());
+
+
     }
 
 
 
 }
+
+
+
+
 
 void Sensors::getGPSLatLong(int *latlong)
 {
@@ -36,6 +42,9 @@ void Sensors::getGPSLatLong(int *latlong)
     latlong[1] = myGNSS.getLongitude();
     // longitude = longitude / 10000000;
 }
+
+
+
 
 // BMP390
 

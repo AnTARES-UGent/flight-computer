@@ -26,7 +26,7 @@ class Sensors
 
 private:
     void initGPS();
-    
+    void newGpsDataAvailable();
     void initBarometer(float sealevel_pressure);
 
 

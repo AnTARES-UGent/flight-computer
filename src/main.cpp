@@ -3,10 +3,22 @@
 #include <sensors.h>
 #include <IOManager.h>
 
-Sensors sensor_manager;
-IOManager io_man;
+Sensors sensorManager;
+IOManager ioManager;
 
 int state = 0;
+
+
+
+void init();
+void preflight();
+void active_flight();
+void coast_to_apoapsis();
+void falling();
+void landed();
+
+
+
 
 int main()
 {
@@ -61,27 +73,42 @@ int main()
 
 void init()
 {
-    io_man.init();
-
-    sensor_manager.initSensors(5.2);
+    ioManager.init();
+    // TODO GET SEA LEVEL INFO
+    sensorManager.initSensors(5.2);
 }
 
 void preflight()
 {
+    //preflight checks 
+
+
+
 }
 
 void active_flight()
 {
+    //waiting on the launchpad and powered flight
+
 }
 
 void coast_to_apoapsis()
 {
+    //motor cutoff
+
 }
 
 void falling()
 {
+
+    //falling from apoapsis
 }
 
 void landed()
 {
+    int latlong[2];
+    sensorManager.getGPSLatLong(latlong);
+    //TODO TRANSMIT GPS LAT LONG
+    delay(1000);
+
 }

@@ -2,7 +2,7 @@
 
 
 //initalization
-void init(){
+void IOManager::init(){
 
 }
 
@@ -12,6 +12,7 @@ void initSDCard(){
 }
 
 void initFlash(){
+
     
 }
 

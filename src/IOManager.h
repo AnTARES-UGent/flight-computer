@@ -7,7 +7,10 @@ class IOManager{
     private:
         void write_sd();
         void write_flash();
-        void transmit();
+        
+        void initSDCard();
+        void initFlash();
+
         
 
 
@@ -19,7 +22,10 @@ class IOManager{
         void init();
         void write();
 
-        void dumpFlash();
+        void transmit();
+        
+
+        void dumpToFlash();
 
 
         // tranciever
