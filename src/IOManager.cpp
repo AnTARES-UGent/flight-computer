@@ -34,7 +34,12 @@ void IOManager::writeToSD(char *data)
 
 
 void IOManager::closeOnBoardStorage(){
-    logFile.close();
+
+
+    if(logFile ){
+        logFile.close();
+    }
+    
 
 }
 
@@ -59,7 +64,7 @@ void IOManager::transmit(char *data)
     LoRa.endPacket();
 }
 
-void IOManager::log(char *key, char *msg, int16_t printLevel, int16_t loglevel)
+void IOManager::log(const char *key,const char *msg, int16_t printLevel, int16_t loglevel)
 {
     BSONObjBuilder builder;
     int32_t time = millis();
@@ -71,7 +76,7 @@ void IOManager::log(char *key, char *msg, int16_t printLevel, int16_t loglevel)
     log(builder.obj(), printLevel);
 }
 
-void IOManager::log(char *key, double value, int16_t printLevel, int16_t loglevel)
+void IOManager::log(const char *key, double value, int16_t printLevel, int16_t loglevel)
 {
     BSONObjBuilder builder;
     int32_t time = millis();
@@ -84,7 +89,7 @@ void IOManager::log(char *key, double value, int16_t printLevel, int16_t logleve
     log(builder.obj(), printLevel);
 }
 
-void IOManager::log(char *key, int32_t value, int16_t printLevel, int16_t loglevel)
+void IOManager::log(const char *key, int32_t value, int16_t printLevel, int16_t loglevel)
 {
     BSONObjBuilder builder;
     int32_t time = millis();
@@ -147,13 +152,6 @@ BSONObject IOManager::slowBsonReceive()
     return bo;
 }
 
-bool IOManager::hasNewPacket()
-{
+void IOManager::initFlash(){
 
-    return LoRa.parsePacket();
-}
-
-bool IOManager::available()
-{
-    return LoRa.available();
 }

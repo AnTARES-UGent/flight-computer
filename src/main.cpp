@@ -6,7 +6,7 @@
 #define PREFLIGHT 0
 #define ACTIVE_FLIGHT 1
 #define COAST_TO_APOAPSIS 2
-#define FALLING 3
+#define FALLING_FLIGHT 3
 #define LANDED 4
 
 Sensors sensorManager;
@@ -26,13 +26,13 @@ float getSealevelPressure();
 
 
 
-void log(char *key, int32_t msg);
-void warn(char *key, int32_t msg);
-void err(char *key, int32_t msg);
+void log(const char *key, int32_t msg);
+void warn(const char *key, int32_t msg);
+void err(const char *key, int32_t msg);
 
-void log(char *key, char *msg);
-void warn(char *key, char *msg);
-void err(char *key, char *msg);
+void log(const char *key, const char *msg);
+void warn(const char *key, const char *msg);
+void err(const char *key, const char *msg);
 
 int main()
 {
@@ -66,7 +66,7 @@ int main()
 
             break;
 
-        case FALLING:
+        case FALLING_FLIGHT:
 
             falling();
 
@@ -124,6 +124,7 @@ void coast_to_apoapsis()
 
     if (current_alt - prev_alt < 0)
     { // TODO SET THRESHHOLD
+    
         state = FALLING;
     }
     prev_alt = current_alt;
@@ -137,6 +138,8 @@ void falling()
 
     if (abs(current_alt - prev_alt) < 10)//TODO CHANGE TRIGGER
     { // TODO SET THRESHHOLD
+
+        ioManager.closeOnBoardStorage();//TODO TEST
         state = LANDED;
     }
     prev_alt = current_alt;
@@ -194,32 +197,32 @@ float getSealevelPressure()
 
 
 
-void log(char *key, int32_t msg)
+void log(const char *key, int32_t msg)
 {
     ioManager.log(key, msg, 2, 0);
 }
 
-void warn(char *key, int32_t msg)
+void warn(const char *key, int32_t msg)
 {
     ioManager.log(key, msg, 2, 1);
 }
 
-void err(char *key, int32_t msg)
+void err(const char *key, int32_t msg)
 {
     ioManager.log(key, msg, 2, 2);
 }
 
-void log(char *key, char *msg)
+void log(const char *key, const char *msg)
 {
     ioManager.log(key, msg, 2, 0);
 }
 
-void warn(char *key, char *msg)
+void warn(const char *key,const char *msg)
 {
     ioManager.log(key, msg, 2, 1);
 }
 
-void err(char *key, char *msg)
+void err(const char *key, const char *msg)
 {
     ioManager.log(key, msg, 2, 2);
 }

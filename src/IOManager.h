@@ -24,9 +24,9 @@ private:
 
 public:
     void closeOnBoardStorage();
-    void log(char *key, double value, int16_t printLevel, int16_t loglevel);
-    void log(char *key, char *msg, int16_t printLevel, int16_t loglevel);
-    void log(char *key, int32_t value, int16_t printLevel, int16_t loglevel);
+    void log(const char *key, double value, int16_t printLevel, int16_t loglevel);
+    void log(const char *key,const  char *msg, int16_t printLevel, int16_t loglevel);
+    void log(const char *key, int32_t value, int16_t printLevel, int16_t loglevel);
     void log(BSONObject obj, int16_t printLevel);
 
     BSONObject slowBsonReceive();
