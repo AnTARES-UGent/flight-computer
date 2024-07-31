@@ -3,6 +3,7 @@
 #include <ardubsonObject.h>
 #include <ardubsonObjBuilder.h>
 #include <LoRa.h>
+#include <SD.h>
 class IOManager{
 
     private:
@@ -13,7 +14,7 @@ class IOManager{
         void initSDCard();
         void initFlash();
         
-        
+        const int chipSelect = 10; //TODO SET THIS CORRECTLY
         void initTranciever();
         
 
@@ -21,11 +22,12 @@ class IOManager{
 
 
     public:
-
+        void log(char *key, double value, int16_t printLevel, int16_t loglevel);
         void log(char* key,char* msg,int16_t printLevel,int16_t loglevel);
         void log(char* key,int32_t  value,int16_t  printLevel,int16_t loglevel);
         void log(BSONObject obj, int16_t  printLevel );
 
+        BSONObject slowBsonReceive();
         //general data
         void init();
         void write();
@@ -35,9 +37,10 @@ class IOManager{
         void dumpToFlash();
 
 
-        // tranciever
+        // transceiver
         void read();
         bool available();
+        bool hasNewPacket();
 
 
 
