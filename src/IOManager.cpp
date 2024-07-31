@@ -4,31 +4,45 @@
 void IOManager::init()
 {
 
-    initTranciever();
+    initTranceiver();
     log("init", "Transiever", 1, 0);
     initSDCard();
     log("init", "SD", 1, 0);
 
     initFlash();
     log("init", "Flash", 2, 0);
-
-
 }
 
 void IOManager::initSDCard()
 {
 
-    //TODO DECIDE HOW TO WRITE TO FILE
-    SD.begin(chipSelect);
-    
+    // TODO DECIDE HOW TO WRITE TO FILE
+    if (!SD.begin(chipSelect))
+    {
+        log("INIT", "SD not initialized", 2, 2);
+    }
+    logFile = SD.open("log.bin", FILE_WRITE);
+}
+
+void IOManager::writeToSD(char *data)
+{
+
+    logFile.write(data);
+    logFile.flush();
+    // TODO DOE ZEKER MET SYNC DING
+}
+
+
+void IOManager::closeOnBoardStorage(){
+    logFile.close();
+
 }
 
 void initFlash()
 {
-
 }
 
-void IOManager::initTranciever()
+void IOManager::initTranceiver()
 {
 
     if (!LoRa.begin(frequency))
@@ -57,8 +71,6 @@ void IOManager::log(char *key, char *msg, int16_t printLevel, int16_t loglevel)
     log(builder.obj(), printLevel);
 }
 
-
-
 void IOManager::log(char *key, double value, int16_t printLevel, int16_t loglevel)
 {
     BSONObjBuilder builder;
@@ -68,7 +80,7 @@ void IOManager::log(char *key, double value, int16_t printLevel, int16_t logleve
     builder.append("T", time);       // time since startup
     builder.append("P", printLevel); // print level
     builder.append("L", loglevel);   // print level
-    
+
     log(builder.obj(), printLevel);
 }
 
@@ -100,7 +112,7 @@ void IOManager::log(BSONObject obj, int16_t printLevel)
     }
     else if (printLevel == 2)
     { // transmit and write
-
+        obj.rawData();
         transmit(bytes);
     }
 }

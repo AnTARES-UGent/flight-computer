@@ -135,7 +135,7 @@ void falling()
 
     int current_alt = sensorManager.getBaroAltitude();
 
-    if (abs(current_alt - prev_alt) < 10)
+    if (abs(current_alt - prev_alt) < 10)//TODO CHANGE TRIGGER
     { // TODO SET THRESHHOLD
         state = LANDED;
     }
