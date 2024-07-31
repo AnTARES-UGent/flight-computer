@@ -4,12 +4,12 @@
 #include <arduino.h>
 #include <Wire.h> //Needed for I2C to GPS
 
-
-
 #include <SparkFun_u-blox_GNSS_Arduino_Library.h>
 #include <Adafruit_BMP3XX.h>
 
-
+#include <ardubsonObject.h>
+#include <ardubsonObjBuilder.h>
+#include <IOManager.h>
 
 
 class Sensors
@@ -20,7 +20,7 @@ class Sensors
 
 
 
-
+  
   float seaLevelPressure = 1013.25;
 
 
@@ -29,12 +29,14 @@ private:
     void newGpsDataAvailable();
     void initBarometer(float sealevel_pressure);
 
-
+    
 
 public:
+    BSONObject getSensorData();
     void initSensors(float seaLevelPressure);
     void getGPSLatLong(int * latlong);
     int getBaroAltitude();
+
 
 };
 

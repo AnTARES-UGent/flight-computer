@@ -70,3 +70,16 @@ int Sensors::getBaroAltitude(){
 }
 
 
+BSONObject Sensors::getSensorData(){
+    BSONObjBuilder builder;
+
+    int16_t sensor_log_level = 4;
+    builder.append("lat",myGNSS.getLatitude());
+    builder.append("long",myGNSS.getLongitude());
+    builder.append("alt",myGNSS.getAltitude());
+    builder.append("L",sensor_log_level);//SENSOR DATA
+
+
+    return builder.obj();
+
+}
