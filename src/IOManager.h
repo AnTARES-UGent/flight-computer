@@ -1,18 +1,17 @@
 #ifndef IOMANAGER_H
 #define IOMANAGER_H
-#include <ardubsonObject.h>
-#include <ardubsonObjBuilder.h>
+
 #include <LoRa.h>
 #include <SD.h>
+#include <ArduinoJson.h>
 class IOManager
 {
 
 private:
     float frequency = 915E6;
     File logFile;
-
-
-    void writeToSD(char* data);
+   
+    void writeToSD(JsonDocument doc);
     void write_flash();
 
     void initSDCard();
@@ -20,20 +19,22 @@ private:
 
     const int chipSelect = 10; // TODO SET THIS CORRECTLY
     void initTranceiver();
-    
+    #ifdef SIMULATION_MODE
+        void printHex(char *data, int len);
+    #endif
 
 public:
     void closeOnBoardStorage();
     void log(const char *key, double value, int16_t printLevel, int16_t loglevel);
     void log(const char *key,const  char *msg, int16_t printLevel, int16_t loglevel);
     void log(const char *key, int32_t value, int16_t printLevel, int16_t loglevel);
-    void log(BSONObject obj, int16_t printLevel);
+    void log(JsonDocument obj, int16_t printLevel,int16_t loglevel);
 
-    BSONObject slowBsonReceive();
+    JsonDocument slowBsonReceive();
     // general data
     void init();
     void write();
-    void transmit(char *data);
+    void transmit(JsonDocument obj);
 
     void dumpToFlash();
 

@@ -14,37 +14,13 @@ void Sensors::initGPS()
     while (myGNSS.begin() == false)
     {
         Serial.println("GPS not found");
-
-
     }
 
-    while(!myGNSS.getGnssFixOk()){
-         Serial.println("acquiring GPS signal.... fix type=" + myGNSS.getFixType());
-
-
+    while (!myGNSS.getGnssFixOk())
+    {
+        Serial.println("acquiring GPS signal.... fix type=" + myGNSS.getFixType());
     }
-
-
-
 }
-
-
-
-
-
-void Sensors::getGPSLatLong(int *latlong)
-{
-
-    // latitude
-    latlong[0] = myGNSS.getLatitude();
-    // latitude = latitude / 10000000;
-    // longitude
-    latlong[1] = myGNSS.getLongitude();
-    // longitude = longitude / 10000000;
-}
-
-
-
 
 // BMP390
 
@@ -57,29 +33,50 @@ void Sensors::initBarometer(float sealevel_pressure)
 
         Serial.println("barometer not found");
     }
-    //TODO CHECK THIS IF ITS RIGHT
+    // TODO CHECK THIS IF ITS RIGHT
     bmp.setTemperatureOversampling(BMP3_OVERSAMPLING_8X);
     bmp.setPressureOversampling(BMP3_OVERSAMPLING_4X);
     bmp.setIIRFilterCoeff(BMP3_IIR_FILTER_COEFF_3);
     bmp.setOutputDataRate(BMP3_ODR_50_HZ);
 }
 
+int Sensors::getBaroAltitude()
+{
 
-int Sensors::getBaroAltitude(){
+#ifdef SIMULATION_MODE
+    Serial.println("%BARO%");
+    Serial.flush();
+
+    while (!Serial.available());
+    return Serial.parseInt();
+
+    
+#endif
+
     return bmp.readAltitude(seaLevelPressure);
 }
 
-
-BSONObject Sensors::getSensorData(){
-    BSONObjBuilder builder;
-
-    int16_t sensor_log_level = 4;
-    builder.append("lat",myGNSS.getLatitude());
-    builder.append("long",myGNSS.getLongitude());
-    builder.append("alt",myGNSS.getAltitude());
-    builder.append("L",sensor_log_level);//SENSOR DATA
+JsonDocument Sensors::getSensorData()
+{
+    JsonDocument filter;
 
 
-    return builder.obj();
 
+#ifdef SIMULATION_MODE
+    filter["lat"] = 1000;
+    filter["long"] = 1000;
+
+#else
+    filter["lat"] = myGNSS.getLatitude();
+    filter["long"] =  myGNSS.getLongitude();
+    filter["alt"] = myGNSS.getAltitude();
+
+
+#endif
+
+    filter["baro"] = getBaroAltitude();
+    
+
+
+    return filter;
 }

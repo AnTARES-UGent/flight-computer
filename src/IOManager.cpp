@@ -24,23 +24,22 @@ void IOManager::initSDCard()
     logFile = SD.open("log.bin", FILE_WRITE);
 }
 
-void IOManager::writeToSD(char *data)
+void IOManager::writeToSD(JsonDocument doc)
 {
 
-    logFile.write(data);
+    serializeJson(doc,logFile);
+
     logFile.flush();
     // TODO DOE ZEKER MET SYNC DING
 }
 
+void IOManager::closeOnBoardStorage()
+{
 
-void IOManager::closeOnBoardStorage(){
-
-
-    if(logFile ){
+    if (logFile)
+    {
         logFile.close();
     }
-    
-
 }
 
 void initFlash()
@@ -56,70 +55,72 @@ void IOManager::initTranceiver()
     }
 }
 
+
 // TODO NEEDS TESTING
-void IOManager::transmit(char *data)
+void IOManager::transmit(JsonDocument data)
 {
     LoRa.beginPacket();
-    LoRa.print(data);
+
+
+    serializeJson(data,LoRa);
+   // LoRa.print(data);
     LoRa.endPacket();
 }
 
-void IOManager::log(const char *key,const char *msg, int16_t printLevel, int16_t loglevel)
+void IOManager::log(const char *key, const char *msg, int16_t printLevel, int16_t loglevel)
 {
-    BSONObjBuilder builder;
-    int32_t time = millis();
+    JsonDocument doc;
 
-    builder.append(key, msg);
-    builder.append("T", time);       // time since startup
-    builder.append("P", printLevel); // print level
-    builder.append("L", loglevel);   // print level
-    log(builder.obj(), printLevel);
+    doc[key] = msg;
+
+    log(doc, printLevel, loglevel);
 }
 
 void IOManager::log(const char *key, double value, int16_t printLevel, int16_t loglevel)
 {
-    BSONObjBuilder builder;
-    int32_t time = millis();
 
-    builder.append(key, value);
-    builder.append("T", time);       // time since startup
-    builder.append("P", printLevel); // print level
-    builder.append("L", loglevel);   // print level
-
-    log(builder.obj(), printLevel);
+    JsonDocument doc;
+    doc[key] = value;
+    log(doc, printLevel, loglevel);
 }
 
 void IOManager::log(const char *key, int32_t value, int16_t printLevel, int16_t loglevel)
 {
-    BSONObjBuilder builder;
-    int32_t time = millis();
-
-    builder.append(key, value);
-    builder.append("T", time);       // time since startup
-    builder.append("P", printLevel); // print level
-    builder.append("L", loglevel);   // print level
-    log(builder.obj(), printLevel);
+    JsonDocument doc;
+    doc[key] = value;
+    log(doc, printLevel, loglevel);
 }
 
 // TODO WRITE TO FLASH
-void IOManager::log(BSONObject obj, int16_t printLevel)
+void IOManager::log(JsonDocument obj, int16_t printLevel, int16_t loglevel)
 {
+    int32_t time = millis();
+    obj["T"] = time;
+    obj["P"] = printLevel;
+    obj["L"] = loglevel;
+   
 
-    char *bytes = obj.rawData();
+#ifdef SIMULATION_MODE
+    serializeJson(obj, Serial);
 
+#else
     if (printLevel == 0)
     { // write to flash
+
+        writeToSD(obj);
     }
     else if (printLevel == 1)
     { // transmit
 
-        transmit(bytes);
+        transmit(obj);
     }
     else if (printLevel == 2)
     { // transmit and write
-        obj.rawData();
-        transmit(bytes);
+
+        writeToSD(obj);
+        transmit(obj);
     }
+#endif
 }
 
 void write()
@@ -127,31 +128,21 @@ void write()
 }
 
 // waits until a packet is received
-BSONObject IOManager::slowBsonReceive()
+JsonDocument IOManager::slowBsonReceive()
 {
     while (!LoRa.parsePacket())
         ; // wait until packet is recieved
 
-    const int bufferSize = 256; // Adjust this size based on your data
-    char buffer[bufferSize];
-    int index = 0;
 
-    // Read the incoming bytes into the buffer
-    while (LoRa.available() && index < bufferSize)
+    JsonDocument doc;
+    if (LoRa.available())
     {
-        buffer[index++] = LoRa.read();
+        deserializeJson(doc, LoRa);
     }
 
-    if (index < bufferSize)
-    {
-        buffer[index] = '\0'; // Null-terminate the buffer if there is space
-    }
-
-    BSONObject bo(buffer);
-
-    return bo;
+    return doc;
 }
 
-void IOManager::initFlash(){
-
+void IOManager::initFlash()
+{
 }

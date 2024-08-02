@@ -7,16 +7,15 @@
 #include <SparkFun_u-blox_GNSS_Arduino_Library.h>
 #include <Adafruit_BMP3XX.h>
 
-#include <ardubsonObject.h>
-#include <ardubsonObjBuilder.h>
+
 #include <IOManager.h>
-
-
+#include <ArduinoJson.h>
 class Sensors
 {
 
   SFE_UBLOX_GNSS myGNSS;
   Adafruit_BMP3XX bmp;
+
 
 
 
@@ -32,7 +31,7 @@ private:
     
 
 public:
-    BSONObject getSensorData();
+    JsonDocument getSensorData();
     void initSensors(float seaLevelPressure);
     void getGPSLatLong(int * latlong);
     int getBaroAltitude();
