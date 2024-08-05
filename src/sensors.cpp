@@ -68,10 +68,26 @@ void Sensors::initINA219()
 
 void Sensors::getBatteryInfo(float *data)
 {
+#if SIMULATION_MODE
+    Serial.println("%BATT%");
+    Serial.flush();
+
+    while (!Serial.available())
+        ;
+
+    data[0] = Serial.parseFloat();
+    data[1] = Serial.parseFloat();
+    data[2] = Serial.parseFloat();
+    data[3] = Serial.parseFloat();
+
+#else
+
     data[0] = ina219.getShuntVoltage_mV();
     data[1] = ina219.getBusVoltage_V();
     data[2] = ina219.getCurrent_mA();
     data[3] = ina219.getPower_mW();
+
+#endif
 }
 
 void Sensors::initMagnetometer()
@@ -89,17 +105,32 @@ void Sensors::initMagnetometer()
 
 void Sensors::getMagnetoData(float *data)
 {
+
+#if SIMULATION_MODE
+    Serial.println("%MAGNET%");
+    Serial.flush();
+
+    while (!Serial.available())
+        ;
+
+    data[0] = Serial.parseFloat();
+    data[1] = Serial.parseFloat();
+    data[2] = Serial.parseFloat();
+
+#else
+
     sensors_event_t magnetoEvt;
     magnetometer.getEvent(&magnetoEvt);
     data[0] = magnetoEvt.magnetic.x;
     data[1] = magnetoEvt.magnetic.y;
     data[2] = magnetoEvt.magnetic.z;
+#endif
 }
 
 void Sensors::initGyroAndAccel()
 {
     // TODO CONFIG
-    if (!gyroAccel.begin_I2C()) 
+    if (!gyroAccel.begin_I2C())
     { // hardware I2C mode, can pass in address & alt Wire
 
         Serial.println("Failed to find LIS3MDL chip");
@@ -114,20 +145,50 @@ void Sensors::initGyroAndAccel()
 
 void Sensors::getAccelData(float *data)
 {
+#if SIMULATION_MODE
+    Serial.println("%ACCEL%");
+    Serial.flush();
+
+    while (!Serial.available())
+        ;
+
+    data[0] = Serial.parseFloat();
+    data[1] = Serial.parseFloat();
+    data[2] = Serial.parseFloat();
+
+#else
+
     sensors_event_t accelEvt;
     accelerometer->getEvent(&accelEvt);
     data[0] = accelEvt.acceleration.x;
     data[1] = accelEvt.acceleration.y;
     data[2] = accelEvt.acceleration.z;
+
+#endif
 }
+
 
 void Sensors::getGyroData(float *data)
 {
+#if SIMULATION_MODE
+    Serial.println("%GYRO%");
+    Serial.flush();
+
+    while (!Serial.available())
+        ;
+
+    data[0] = Serial.parseFloat();
+    data[1] = Serial.parseFloat();
+    data[2] = Serial.parseFloat();
+
+#else
     sensors_event_t gyroEvt;
     accelerometer->getEvent(&gyroEvt);
     data[0] = gyroEvt.gyro.x;
     data[1] = gyroEvt.gyro.y;
     data[2] = gyroEvt.gyro.z;
+
+#endif
 }
 
 JsonDocument Sensors::getSensorData()
@@ -155,20 +216,18 @@ JsonDocument Sensors::getSensorData()
     getAccelData(accelData);
     getMagnetoData(magnetoData);
 
-    //gyroscope
+    // gyroscope
     sensorData["gyroX"] = gyroData[0];
     sensorData["gyroY"] = gyroData[1];
     sensorData["gyroZ"] = gyroData[2];
-    //accelerometer
+    // accelerometer
     sensorData["accelX"] = accelData[0];
     sensorData["accelY"] = accelData[1];
     sensorData["accelZ"] = accelData[2];
-    //magneto
+    // magneto
     sensorData["magnetoX"] = magnetoData[0];
     sensorData["magnetoY"] = magnetoData[1];
     sensorData["magnetoZ"] = magnetoData[2];
-
-
 
     return sensorData;
 }
