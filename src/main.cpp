@@ -21,9 +21,9 @@ void setup()
     while (!Serial.available())
         ;
     Serial.parseInt(); // small thingy so that we wait until the simulator is detected
-    state = PREFLIGHT;
+    rocket.state = PREFLIGHT;
 
-    prev_alt = 9;
+    rocket.prev_alt = 9;
 #else
     rocket.initRocket();
     logger.log("main", "finishing init");

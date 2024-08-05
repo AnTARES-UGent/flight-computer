@@ -47,36 +47,128 @@ int Sensors::getBaroAltitude()
     Serial.println("%BARO%");
     Serial.flush();
 
-    while (!Serial.available());
+    while (!Serial.available())
+        ;
     return Serial.parseInt();
 
-    
 #endif
 
     return bmp.readAltitude(seaLevelPressure);
 }
 
+void Sensors::initINA219()
+{
+    if (!ina219.begin())
+    {
+        Serial.println("Failed to find INA219 chip");
+        while (1)
+            ; // TODO
+    }
+}
+
+void Sensors::getBatteryInfo(float *data)
+{
+    data[0] = ina219.getShuntVoltage_mV();
+    data[1] = ina219.getBusVoltage_V();
+    data[2] = ina219.getCurrent_mA();
+    data[3] = ina219.getPower_mW();
+}
+
+void Sensors::initMagnetometer()
+{
+
+    // TODO CONFIG
+    if (!magnetometer.begin_I2C())
+    { // hardware I2C mode, can pass in address & alt Wire
+
+        Serial.println("Failed to find LIS3MDL chip");
+        while (1)
+            ;
+    }
+}
+
+void Sensors::getMagnetoData(float *data)
+{
+    sensors_event_t magnetoEvt;
+    magnetometer.getEvent(&magnetoEvt);
+    data[0] = magnetoEvt.magnetic.x;
+    data[1] = magnetoEvt.magnetic.y;
+    data[2] = magnetoEvt.magnetic.z;
+}
+
+void Sensors::initGyroAndAccel()
+{
+    // TODO CONFIG
+    if (!gyroAccel.begin_I2C()) 
+    { // hardware I2C mode, can pass in address & alt Wire
+
+        Serial.println("Failed to find LIS3MDL chip");
+        while (1)
+            ;
+    }
+
+    accelerometer = gyroAccel.getAccelerometerSensor();
+    gyroscope = gyroAccel.getGyroSensor();
+    tempSensor = gyroAccel.getTemperatureSensor();
+}
+
+void Sensors::getAccelData(float *data)
+{
+    sensors_event_t accelEvt;
+    accelerometer->getEvent(&accelEvt);
+    data[0] = accelEvt.acceleration.x;
+    data[1] = accelEvt.acceleration.y;
+    data[2] = accelEvt.acceleration.z;
+}
+
+void Sensors::getGyroData(float *data)
+{
+    sensors_event_t gyroEvt;
+    accelerometer->getEvent(&gyroEvt);
+    data[0] = gyroEvt.gyro.x;
+    data[1] = gyroEvt.gyro.y;
+    data[2] = gyroEvt.gyro.z;
+}
+
 JsonDocument Sensors::getSensorData()
 {
-    JsonDocument filter;
-
-
+    JsonDocument sensorData;
 
 #ifdef SIMULATION_MODE
-    filter["lat"] = 1000;
-    filter["long"] = 1000;
+    sensorData["lat"] = 1000;
+    sensorData["long"] = 1000;
 
 #else
-    filter["lat"] = myGNSS.getLatitude();
-    filter["long"] =  myGNSS.getLongitude();
-    filter["alt"] = myGNSS.getAltitude();
-
+    sensorData["lat"] = myGNSS.getLatitude();
+    sensorData["long"] = myGNSS.getLongitude();
+    sensorData["alt"] = myGNSS.getAltitude();
 
 #endif
 
-    filter["baro"] = getBaroAltitude();
-    
+    sensorData["baro"] = getBaroAltitude();
+
+    float gyroData[3];
+    float accelData[3];
+    float magnetoData[3];
+
+    getGyroData(gyroData);
+    getAccelData(accelData);
+    getMagnetoData(magnetoData);
+
+    //gyroscope
+    sensorData["gyroX"] = gyroData[0];
+    sensorData["gyroY"] = gyroData[1];
+    sensorData["gyroZ"] = gyroData[2];
+    //accelerometer
+    sensorData["accelX"] = accelData[0];
+    sensorData["accelY"] = accelData[1];
+    sensorData["accelZ"] = accelData[2];
+    //magneto
+    sensorData["magnetoX"] = magnetoData[0];
+    sensorData["magnetoY"] = magnetoData[1];
+    sensorData["magnetoZ"] = magnetoData[2];
 
 
-    return filter;
+
+    return sensorData;
 }

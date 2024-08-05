@@ -15,7 +15,7 @@ void Rocket::initRocket()
 
 void Rocket::preflight()
 {
-    logger.log("preflight", "prefligth");
+    logger.log("preflight", "preflight");
     ioManager.log(sensorManager.getSensorData(), 2, 0);
 
     // preflight checks
