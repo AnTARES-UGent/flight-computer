@@ -3,8 +3,15 @@
 
 #include "rocket.h"
 
+
+
+/*
+    initialisation of the rocket, initialises I/O, gets sea level perssure and initialises the sensors.
+
+*/
 void Rocket::initRocket()
-{
+{   
+    Wire.begin();
     ioManager.init();
 
     // TODO GET SEA LEVEL INFO
@@ -13,6 +20,11 @@ void Rocket::initRocket()
     sensorManager.initSensors(pressure);
 }
 
+
+
+/*
+    Rocket is waiting at the launchpad
+*/
 void Rocket::preflight()
 {
     logger.log("preflight", "preflight");
@@ -22,19 +34,25 @@ void Rocket::preflight()
     int current_alt = sensorManager.getBaroAltitude();
 
     if (current_alt - prev_alt > 10)
-    { // TODO SET THRESHHOLD
+    { // TODO SET THRESHHOLD + decide if to use here and not await_launch
         state = ACTIVE_FLIGHT;
     }
     prev_alt = current_alt;
 }
 
-// TODO DECIDE IF REMOVE OR NOT
+// TODO decide of to rename to await_launch????
 void Rocket::active_flight()
 {
     ioManager.log(sensorManager.getSensorData(), 2, 0);
     // waiting on the launchpad and powered flight
 }
 
+
+
+/*
+
+    When launched, this routine will execute until the rocket has reached apoapsis.
+*/
 void Rocket::coast_to_apoapsis()
 {
 
@@ -50,6 +68,10 @@ void Rocket::coast_to_apoapsis()
     prev_alt = current_alt;
 }
 
+
+/*
+    Executes when the rocket has reached apoapsis and is falling back down.
+*/
 void Rocket::falling()
 {
     ioManager.log(sensorManager.getSensorData(), 2, 0);
@@ -66,6 +88,12 @@ void Rocket::falling()
     // falling from apoapsis
 }
 
+
+
+/*
+    Executes when the rocket has landed.
+
+*/
 void Rocket::landed()
 {
 
@@ -75,6 +103,10 @@ void Rocket::landed()
 }
 
 // TODO MAYBE ADD SOME CONFIRMATION
+/*
+    gets the sealevel pressure for the barometer.
+    
+*/
 float Rocket::getSeaLevelPressure()
 {
 

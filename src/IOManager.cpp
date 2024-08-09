@@ -1,6 +1,7 @@
 #include "IOManager.h"
-
-// initalization
+/*
+    Initialisation of the I/O of the rocket
+*/
 void IOManager::init()
 {
 
@@ -13,6 +14,11 @@ void IOManager::init()
     log("init", "Flash", 2, 0);
 }
 
+
+
+/*
+    initialises the SD card reader/writer and opens the log file so we can write to it
+*/
 void IOManager::initSDCard()
 {
 
@@ -24,15 +30,23 @@ void IOManager::initSDCard()
     logFile = SD.open("log.bin", FILE_WRITE);
 }
 
+/*
+    writes jsonDocument to the logfile (opened in initSDCard)
+    @param doc jsonDocument that needs to be written
+
+*/
+
 void IOManager::writeToSD(JsonDocument doc)
 {
 
     serializeJson(doc,logFile);
 
     logFile.flush();
-    // TODO DOE ZEKER MET SYNC DING
-}
 
+}
+/*
+    Closes the onboard storage (safely) so that everything is written to it.
+*/
 void IOManager::closeOnBoardStorage()
 {
 
@@ -42,9 +56,19 @@ void IOManager::closeOnBoardStorage()
     }
 }
 
+/*
+Initializes flash.
+
+*/
+
 void initFlash()
 {
 }
+
+
+/*
+    initialises the LoRa tranciever on the correct frequency
+*/
 
 void IOManager::initTranceiver()
 {
@@ -56,7 +80,12 @@ void IOManager::initTranceiver()
 }
 
 
-// TODO NEEDS TESTING
+
+/*
+    transmits jsonDocument to the logfile (opened in initSDCard)
+    @param doc jsonDocument that needs to be written
+
+*/
 void IOManager::transmit(JsonDocument data)
 {
     LoRa.beginPacket();
@@ -67,6 +96,14 @@ void IOManager::transmit(JsonDocument data)
     LoRa.endPacket();
 }
 
+/*
+    logs a message
+
+    @param key           key of the message.
+    @param msg          (String) message that you want to send.
+    @param printlevel   The level that you want to print, 0 = write to onboard storage, 1 = transmit, 2 = write to onboard storage and transmit.
+    @param loglevel     The loglevel is the severity of the log message itself.
+*/
 void IOManager::log(const char *key, const char *msg, int16_t printLevel, int16_t loglevel)
 {
     JsonDocument doc;
@@ -76,6 +113,14 @@ void IOManager::log(const char *key, const char *msg, int16_t printLevel, int16_
     log(doc, printLevel, loglevel);
 }
 
+/*
+    logs a message
+    
+    @param key           key of the message.
+    @param msg          (Double) message that you want to send.
+    @param printlevel   The level that you want to print, 0 = write to onboard storage, 1 = transmit, 2 = write to onboard storage and transmit.
+    @param loglevel     The loglevel is the severity of the log message itself.
+*/
 void IOManager::log(const char *key, double value, int16_t printLevel, int16_t loglevel)
 {
 
@@ -83,7 +128,14 @@ void IOManager::log(const char *key, double value, int16_t printLevel, int16_t l
     doc[key] = value;
     log(doc, printLevel, loglevel);
 }
-
+/*
+    logs a message
+    
+    @param key           key of the message.
+    @param msg          (int32_t) message that you want to send.
+    @param printlevel   The level that you want to print, 0 = write to onboard storage, 1 = transmit, 2 = write to onboard storage and transmit.
+    @param loglevel     The loglevel is the severity of the log message itself.
+*/
 void IOManager::log(const char *key, int32_t value, int16_t printLevel, int16_t loglevel)
 {
     JsonDocument doc;
@@ -91,9 +143,17 @@ void IOManager::log(const char *key, int32_t value, int16_t printLevel, int16_t 
     log(doc, printLevel, loglevel);
 }
 
-// TODO WRITE TO FLASH
+/*
+    logs a jsonDocument
+
+    @param obj           the jsonDocument that needs to be logged.
+    @param printlevel   The level that you want to print, 0 = write to onboard storage, 1 = transmit, 2 = write to onboard storage and transmit.
+    @param loglevel     The loglevel is the severity of the log message itself.
+*/
 void IOManager::log(JsonDocument obj, int16_t printLevel, int16_t loglevel)
 {
+
+    // TODO WRITE TO FLASH
     int32_t time = millis();
     obj["T"] = time;
     obj["P"] = printLevel;
@@ -123,11 +183,20 @@ void IOManager::log(JsonDocument obj, int16_t printLevel, int16_t loglevel)
 #endif
 }
 
+
+
+/*
+    TODO writes to the onboard storage
+
+*/
 void write()
 {
 }
 
-// waits until a packet is received
+/*
+    waits until an packet is recieved via LoRa
+
+ */
 JsonDocument IOManager::slowBsonReceive()
 {
     while (!LoRa.parsePacket())
@@ -143,6 +212,10 @@ JsonDocument IOManager::slowBsonReceive()
     return doc;
 }
 
+/*
+initialising flash 
+
+*/
 void IOManager::initFlash()
 {
 }

@@ -1,6 +1,7 @@
 #include "IOManager.h"
 #include "sensors.h"
 #include "logger.h"
+#include <Wire.h> //Needed for I2C to GPS
 
 #define PREFLIGHT 0
 #define ACTIVE_FLIGHT 1

@@ -2,7 +2,7 @@
 #define SENSORS_H
 
 #include <arduino.h>
-#include <Wire.h> //Needed for I2C to GPS
+
 
 #include <SparkFun_u-blox_GNSS_Arduino_Library.h>
 #include <Adafruit_BMP3XX.h>

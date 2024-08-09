@@ -1,14 +1,26 @@
 #include <sensors.h>
 
 // initing sensors
+
+/*
+    Initialises sensors  as follows: INA219 , GPS, barometer, magnetometer, gyro/accelerometer
+    @param seaLevelPressure     the sealevel pressure on that day 
+*/
 void Sensors::initSensors(float seaLevelPressure)
 {
-    Wire.begin();
+    initINA219();
     initGPS();
+    initBarometer(seaLevelPressure);
+    
+    initMagnetometer();
+    initGyroAndAccel();
+    
 }
 
-// GPS
 
+/*
+    initialises GPS
+*/
 void Sensors::initGPS()
 {
     while (myGNSS.begin() == false)
@@ -22,8 +34,11 @@ void Sensors::initGPS()
     }
 }
 
-// BMP390
 
+/*
+    initialises barometer
+     @param seaLevelPressure     the sealevel pressure on that day 
+*/
 void Sensors::initBarometer(float sealevel_pressure)
 {
     seaLevelPressure = sealevel_pressure;
@@ -39,7 +54,11 @@ void Sensors::initBarometer(float sealevel_pressure)
     bmp.setIIRFilterCoeff(BMP3_IIR_FILTER_COEFF_3);
     bmp.setOutputDataRate(BMP3_ODR_50_HZ);
 }
+/*
+    reads the barometer for altitude
+    @return (int) altitude calculated by the barometer
 
+*/
 int Sensors::getBaroAltitude()
 {
 
@@ -56,6 +75,10 @@ int Sensors::getBaroAltitude()
     return bmp.readAltitude(seaLevelPressure);
 }
 
+
+/*
+    initialises the INA219
+*/
 void Sensors::initINA219()
 {
     if (!ina219.begin())
@@ -66,6 +89,13 @@ void Sensors::initINA219()
     }
 }
 
+
+/*
+    Gets the battery info.
+
+    @param data     float array of length 4 where the battery info is inserted. Data is inserted as follows : shuntVoltage_mV, busVoltage_V, current_mA, power_mW
+
+*/
 void Sensors::getBatteryInfo(float *data)
 {
 #if SIMULATION_MODE
@@ -90,6 +120,10 @@ void Sensors::getBatteryInfo(float *data)
 #endif
 }
 
+
+/*
+    Initialises the magnetometer.
+*/
 void Sensors::initMagnetometer()
 {
 
@@ -103,6 +137,13 @@ void Sensors::initMagnetometer()
     }
 }
 
+
+/*
+    Gets the magnetometer data.
+
+    @param data     float array of length 3 where the battery info is inserted. Data is inserted as follows : magnetic_X,magnetic_Y,magnetic_Z
+
+*/
 void Sensors::getMagnetoData(float *data)
 {
 
@@ -127,6 +168,10 @@ void Sensors::getMagnetoData(float *data)
 #endif
 }
 
+/*
+
+initialises the gyro and accelerometer
+*/
 void Sensors::initGyroAndAccel()
 {
     // TODO CONFIG
@@ -142,7 +187,12 @@ void Sensors::initGyroAndAccel()
     gyroscope = gyroAccel.getGyroSensor();
     tempSensor = gyroAccel.getTemperatureSensor();
 }
+/*
+    Gets the accelerometer data.
 
+    @param data     float array of length 3 where the battery info is inserted. Data is inserted as follows : accel_X,accel_Y,accel_Z
+
+*/
 void Sensors::getAccelData(float *data)
 {
 #if SIMULATION_MODE
@@ -167,7 +217,12 @@ void Sensors::getAccelData(float *data)
 #endif
 }
 
+/*
+    Gets the gyroscope data.
 
+    @param data     float array of length 3 where the battery info is inserted. Data is inserted as follows : gyro_X,gyro_Y,gyro_Z
+
+*/
 void Sensors::getGyroData(float *data)
 {
 #if SIMULATION_MODE
@@ -191,6 +246,14 @@ void Sensors::getGyroData(float *data)
 #endif
 }
 
+
+
+/*
+    formats the sensordata in an jsonDocument
+
+    @returns jsonDocument where all sensors are embedded in.
+
+*/
 JsonDocument Sensors::getSensorData()
 {
     JsonDocument sensorData;
