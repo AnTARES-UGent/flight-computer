@@ -57,12 +57,6 @@ void loop()
 
         break;
 
-    case ACTIVE_FLIGHT:
-
-        rocket.active_flight();
-
-        break;
-
     case COAST_TO_APOAPSIS:
 
         rocket.coast_to_apoapsis();

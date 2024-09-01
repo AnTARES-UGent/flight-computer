@@ -35,17 +35,12 @@ void Rocket::preflight()
 
     if (current_alt - prev_alt > 10)
     { // TODO SET THRESHHOLD + decide if to use here and not await_launch
-        state = ACTIVE_FLIGHT;
+        state = COAST_TO_APOAPSIS;
     }
     prev_alt = current_alt;
 }
 
 // TODO decide of to rename to await_launch????
-void Rocket::active_flight()
-{
-    ioManager.log(sensorManager.getSensorData(), 2, 0);
-    // waiting on the launchpad and powered flight
-}
 
 
 

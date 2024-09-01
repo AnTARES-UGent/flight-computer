@@ -4,10 +4,10 @@
 #include <Wire.h> //Needed for I2C to GPS
 
 #define PREFLIGHT 0
-#define ACTIVE_FLIGHT 1
-#define COAST_TO_APOAPSIS 2
-#define FALLING_FLIGHT 3
-#define LANDED 4
+
+#define COAST_TO_APOAPSIS 1
+#define FALLING_FLIGHT 2
+#define LANDED 3
 
 // Defined in main.cpp
 extern IOManager ioManager; 
