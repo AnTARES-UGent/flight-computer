@@ -79,6 +79,11 @@ void Rocket::falling()
         ioManager.closeOnBoardStorage(); // TODO TEST
         state = LANDED;
     }
+
+
+    if(current_alt < 200){
+        //TODO TRIGGER CUTTOFF
+    }
     prev_alt = current_alt;
     // falling from apoapsis
 }
