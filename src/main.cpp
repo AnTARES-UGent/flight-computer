@@ -14,6 +14,21 @@ Sensors sensorManager;
 void setup()
 {
 
+
+
+#ifdef TEST_CONNECTIONS
+    Serial.begin(115200);
+    Serial.println("SIMULATION_MODE");
+    while (!Serial.available())
+        ;
+
+
+    rocket.initRocket();
+    
+
+    return;
+#endif
+
 #ifdef SIMULATION_MODE
 
     Serial.begin(115200);

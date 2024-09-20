@@ -160,7 +160,7 @@ void IOManager::log(JsonDocument obj, int16_t printLevel, int16_t loglevel)
     obj["L"] = loglevel;
    
 
-#ifdef SIMULATION_MODE
+#ifdef SIMULATION_MODE || TEST_CONNECTIONS
     serializeJson(obj, Serial);
 
 #else
