@@ -19,9 +19,9 @@ void Sensors::initSensors(float seaLevelPressure)
 
 
 /*
-    initialises GPS
+    Initialises GNSS module
 */
-void Sensors::initGPS()
+bool Gnss::init()
 {
     while (myGNSS.begin() == false)
     {
@@ -32,6 +32,8 @@ void Sensors::initGPS()
     {
         Serial.println("acquiring GPS signal.... fix type=" + myGNSS.getFixType());
     }
+
+    return true;
 }
 
 
@@ -39,10 +41,8 @@ void Sensors::initGPS()
     initialises barometer
      @param seaLevelPressure     the sealevel pressure on that day 
 */
-void Sensors::initBarometer(float sealevel_pressure)
+void Baro::init()
 {
-    seaLevelPressure = sealevel_pressure;
-
     if (!bmp.begin_I2C())
     { // hardware I2C mode, can pass in address & alt Wire
 
@@ -59,7 +59,7 @@ void Sensors::initBarometer(float sealevel_pressure)
     @return (int) altitude calculated by the barometer
 
 */
-int Sensors::getBaroAltitude()
+int Baro::getAltitude()
 {
 
 #ifdef SIMULATION_MODE
@@ -79,14 +79,14 @@ int Sensors::getBaroAltitude()
 /*
     initialises the INA219
 */
-void Sensors::initINA219()
+bool Power::init()
 {
     if (!ina219.begin())
     {
         Serial.println("Failed to find INA219 chip");
-        while (1)
-            ; // TODO
+        return false;
     }
+    return true;
 }
 
 
@@ -96,7 +96,7 @@ void Sensors::initINA219()
     @param data     float array of length 4 where the battery info is inserted. Data is inserted as follows : shuntVoltage_mV, busVoltage_V, current_mA, power_mW
 
 */
-void Sensors::getBatteryInfo(float *data)
+void Power::getData(float *data)
 {
 #if SIMULATION_MODE
     Serial.println("%BATT%");
@@ -124,7 +124,7 @@ void Sensors::getBatteryInfo(float *data)
 /*
     Initialises the magnetometer.
 */
-void Sensors::initMagnetometer()
+bool Magneto::init()
 {
 
     // TODO CONFIG
@@ -132,9 +132,9 @@ void Sensors::initMagnetometer()
     { // hardware I2C mode, can pass in address & alt Wire
 
         Serial.println("Failed to find LIS3MDL chip");
-        while (1)
-            ;
+        return false;
     }
+    return true;
 }
 
 
@@ -144,7 +144,7 @@ void Sensors::initMagnetometer()
     @param data     float array of length 3 where the battery info is inserted. Data is inserted as follows : magnetic_X,magnetic_Y,magnetic_Z
 
 */
-void Sensors::getMagnetoData(float *data)
+void Magneto::getData(float *data)
 {
 
 #if SIMULATION_MODE
@@ -169,23 +169,23 @@ void Sensors::getMagnetoData(float *data)
 }
 
 /*
-
-initialises the gyro and accelerometer
+    initialises the gyro and accelerometer
 */
-void Sensors::initGyroAndAccel()
+void Imu::init()
 {
     // TODO CONFIG
     if (!gyroAccel.begin_I2C())
     { // hardware I2C mode, can pass in address & alt Wire
 
         Serial.println("Failed to find LIS3MDL chip");
-        while (1)
-            ;
+        return false;
     }
 
     accelerometer = gyroAccel.getAccelerometerSensor();
     gyroscope = gyroAccel.getGyroSensor();
     tempSensor = gyroAccel.getTemperatureSensor();
+
+    return true;
 }
 /*
     Gets the accelerometer data.
@@ -193,7 +193,7 @@ void Sensors::initGyroAndAccel()
     @param data     float array of length 3 where the battery info is inserted. Data is inserted as follows : accel_X,accel_Y,accel_Z
 
 */
-void Sensors::getAccelData(float *data)
+void Imu::getAccelData(float *data)
 {
 #if SIMULATION_MODE
     Serial.println("%ACCEL%");
@@ -223,7 +223,7 @@ void Sensors::getAccelData(float *data)
     @param data     float array of length 3 where the battery info is inserted. Data is inserted as follows : gyro_X,gyro_Y,gyro_Z
 
 */
-void Sensors::getGyroData(float *data)
+void Imu::getGyroData(float *data)
 {
 #if SIMULATION_MODE
     Serial.println("%GYRO%");
@@ -247,6 +247,7 @@ void Sensors::getGyroData(float *data)
 }
 
 
+// TODO: change this format, bad practice since sampling rates differ
 
 /*
     formats the sensordata in an jsonDocument
